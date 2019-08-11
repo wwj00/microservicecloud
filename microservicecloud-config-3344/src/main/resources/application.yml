@@ -1,0 +1,13 @@
+server: 
+  port: 3344 
+  
+spring:
+  application:
+    name:  microservicecloud-config  # 微服务对外暴露名称
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:wwj00/microservicecloud-config.git #GitHub上面的git仓库名字
+ 
+
