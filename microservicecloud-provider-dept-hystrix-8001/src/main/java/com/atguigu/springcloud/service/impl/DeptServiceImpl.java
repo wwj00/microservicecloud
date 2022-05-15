@@ -10,27 +10,23 @@ import com.atguigu.springcloud.entities.Dept;
 import com.atguigu.springcloud.service.DeptService;
 
 @Service
-public class DeptServiceImpl implements DeptService
-{
-	@Autowired
-	private DeptDao dao;
-	
-	@Override
-	public boolean add(Dept dept)
-	{
-		return dao.addDept(dept);
-	}
+public class DeptServiceImpl implements DeptService {
+    @Autowired
+    private DeptDao deptDao;
 
-	@Override
-	public Dept get(Long id)
-	{
-		return dao.findById(id);
-	}
+    @Override
+    public boolean add(Dept dept) {
+        return deptDao.addDept(dept);
+    }
 
-	@Override
-	public List<Dept> list()
-	{
-		return dao.findAll();
-	}
+    @Override
+    public Dept get(Long id) {
+        return deptDao.findById(id);
+    }
+
+    @Override
+    public List<Dept> list() {
+        return deptDao.findAll();
+    }
 
 }

@@ -12,10 +12,10 @@ spring:
     name: microservicecloud-dept     # 微服务对外暴露的名字
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
-    driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
-    url: jdbc:mysql://localhost:3306/cloudDB01              # 数据库名称
+    driver-class-name: com.mysql.cj.jdbc.Driver              # mysql驱动包
+    url: jdbc:mysql://47.106.164.17:3306/cloudDB01              # 数据库名称
     username: root
-    password: root123456
+    password: 123456
     dbcp2:
       min-idle: 5                                           # 数据库连接池的最小维持连接数
       initial-size: 5                                       # 初始化连接数
@@ -26,7 +26,7 @@ eureka:
   client: #客户端注册进eureka服务列表内 入住到注册中心
     service-url:   # 注册中心地址  [集群配置 注册中心有三个]
       #      defaultZone: http://localhost:7001/eureka
-      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7001.com:7002/eureka/,http://eureka7001.com:7003/eureka/
   instance:
     instance-id: microservicecloud-dept8001  #别名
     prefer-ip-address: true     #访问路径可以显示IP地址
@@ -34,6 +34,6 @@ eureka:
 info:
   app.name: atguigu-microservicecloud
   company.name: www.atguigu.com
-  build.artifactId: $project.artifactId$
-  build.version: $project.version$
+  build.artifactId: ${project.artifactId}
+  build.version: ${project.version}
 
